@@ -1,0 +1,112 @@
+<!doctype html>
+<style>
+form{
+    margin: auto;
+    width: 35%;
+    }
+
+.result {
+    margin: auto;
+    width: 35%;
+    border: 1px solid #ccc;
+    }
+</style>
+
+<head>
+    <title>Прогнозирование "Соотношение матрица-наполнитель"</title>
+</head>
+
+<form action="{{url_for('main')}}" method="POST">
+    <fieldset>
+        <legend>Прогнозирование соотношения матрица-наполнитель</legend>
+        <br>
+        <br>
+        <legend>Введите значение:</legend>
+        <br>
+        <br>
+        1. Прочность при растяжении
+        <input name = "Прочность при растяжении"" type="float"
+               required>
+        <br>
+        <br>
+
+        2. Плотность, кг/м3
+        <input name = "Плотность, кг/м3" type="float"
+               required>
+        <br>
+        <br>
+
+        3. Модуль упругости, ГПа
+        <input name = "Модуль упругости, ГПа" type="float"
+               required>
+        <br>
+        <br>
+
+        4. Количество отвердителя, м.%
+        <input name = "Количество отвердителя, м.%" type="float"
+               required>
+        <br>
+        <br>
+
+        5. Содержание эпоксидных групп,%_2
+        <input name = "Содержание эпоксидных групп,%_2" type="float"
+               required>
+        <br>
+        <br>
+
+        6. Температура вспышки, С_2
+        <input name = "Температура вспышки, С_2" type="float"
+               required>
+        <br>
+        <br>
+
+        7. Поверхностная плотность, г/м2
+        <input name = "Поверхностная плотность, г/м2" type="float"
+               required>
+        <br>
+        <br>
+
+        8. Модуль упругости при растяжении, ГПа
+        <input name = "Модуль упругости при растяжении, ГПа" type="float"
+               required>
+        <br>
+        <br>
+
+        9. Потребление смолы, г/м2
+        <input name = "Потребление смолы, г/м2" type="float"
+               required>
+        <br>
+        <br>
+
+        10. Угол нашивки, град
+        <input name = "Угол нашивки, град" type="float"
+               required>
+        <br>
+        <br>
+
+        11. Шаг нашивки
+        <input name = "Шаг нашивки" type="float"
+               required>
+        <br>
+        <br>
+
+        12. Плотность нашивки
+        <input name = "Плотность нашивки" type="float"
+               required>
+        <br>
+        <br>
+        <input type="submit" value="Рассчитать">
+
+    </fieldset>
+
+</form>
+
+<div class="result" align="center">
+    {% if result %}
+        <br>
+        <p style="font-size:20px">
+        Прогноз соотношения матрица-наполнитель
+        </p>
+        <p style="font-size:20px"> {{result}}</p>
+    {% endif %}
+</div>
